@@ -59,6 +59,7 @@ output "instance_id" {
         self.assertNotIn("module.web", readme)
         self.assertIn("Terraform: `>= 1.5.0`", readme)
         self.assertIn("Provider `aws`: source `hashicorp/aws`, version `~> 5.0`", readme)
+        self.assertNotIn("__is_block__", readme)
         self.assertIn("examples/basic/main.tf", readme)
         self.assertIn("Breaking Changes", readme)
 

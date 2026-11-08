@@ -256,7 +256,13 @@ def _render_compatibility(terraform_blocks: list[dict[str, Any]]) -> str:
                 provider_blocks = value if isinstance(value, list) else [value]
                 for provider_block in provider_blocks:
                     if isinstance(provider_block, dict):
-                        required_providers.update(provider_block)
+                        required_providers.update(
+                            {
+                                name: settings
+                                for name, settings in provider_block.items()
+                                if name != "__is_block__"
+                            }
+                        )
 
     lines = []
     if required_version:
