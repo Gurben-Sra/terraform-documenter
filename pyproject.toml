@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terraform-documenter"
+version = "0.1.0"
+description = "Generate useful README documentation from Terraform modules."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["python-hcl2>=7.0,<9.0"]
+
+[project.scripts]
+tf-doc-gen = "tf_doc_gen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

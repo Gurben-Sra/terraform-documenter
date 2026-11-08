@@ -1,0 +1,1 @@
+"""Terraform module documentation generator."""
